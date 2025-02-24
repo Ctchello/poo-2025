@@ -23,7 +23,7 @@ public class Aluno {
     
     // Criação de métodos
     public void passou(){
-        n = (this.p1 + this.p2) / 2
+        n = (this.p1 + this.p2) / 2;
         if (n >= 6) {
             JOptionPane.showMessageDialog(null,
                 "Aluno passou");
@@ -35,7 +35,7 @@ public class Aluno {
 
     // Exibe a nota final do aluno
     public void notaFinal(){
-        n = (this.p1 + this.p2) / 2
+        n = (this.p1 + this.p2) / 2;
         JOptionPane.showMessageDialog(null,
             "Média Final: " + n);
     }
