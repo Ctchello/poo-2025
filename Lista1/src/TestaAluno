@@ -11,7 +11,7 @@ public class TestaAluno {
         a1.p2 = Float.parseFloat(JOptionPane.showInputDialog("Informe a segunda nota do aluno"));
         
         // Criação do objeto da classe Aluno com o método construtor
-        Aluno a2 = new Aluno(2, "Maria", 20, 10, 10)
+        Aluno a2 = new Aluno(2, "Maria", 20, 10, 10);
         
         // Execução dos métodos da classe Aluno para os 2 objetos
         a1.dadosAluno();
