@@ -14,11 +14,11 @@ public class TestaAluno {
         Aluno a2 = new Aluno(2, "Maria", 20, 10, 10)
         
         // Execução dos métodos da classe Aluno para os 2 objetos
-        a1.dadosAluno;
+        a1.dadosAluno();
         a1.notaFinal();
         a1.passou();
         
-        a2.dadosAluno;
+        a2.dadosAluno();
         a2.notaFinal();
         a2.passou();
     }
