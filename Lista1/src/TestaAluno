@@ -1,0 +1,25 @@
+import javax.swing.*;
+
+public class TestaAluno {
+    public static void main(String[] args) {
+        // Criação do objeto da classe Aluno sem o método construtor, com input do usuário
+        Aluno a1 = new Aluno();
+        a1.numeroAluno = Integer.parseInt(JOptionPane.showInputDialog("Informe o número do aluno"));
+        a1.nome = JOptionPane.showInputDialog("Informe o nome do aluno");
+        a1.idade = Integer.parseInt(JOptionPane.showInputDialog("Informe a idade do aluno"));
+        a1.p1 = Float.parseFloat(JOptionPane.showInputDialog("Informe a primeira nota do aluno"));
+        a1.p2 = Float.parseFloat(JOptionPane.showInputDialog("Informe a segunda nota do aluno"));
+        
+        // Criação do objeto da classe Aluno com o método construtor
+        Aluno a2 = new Aluno(2, "Maria", 20, 10, 10)
+        
+        // Execução dos métodos da classe Aluno para os 2 objetos
+        a1.dadosAluno;
+        a1.notaFinal();
+        a1.passou();
+        
+        a2.dadosAluno;
+        a2.notaFinal();
+        a2.passou();
+    }
+}
