@@ -21,14 +21,20 @@ public class Cliente {
     public void realizarDeposito(float x){
         this.saldo += x;
         System.out.println(
-                "Depósito realizado com sucesso"
+                "Depósito de R$" + x + " realizado com sucesso"
         );
     }
     public void realizarSaque(float x){
-        this.saldo -= x;
-        System.out.println(
-                "Saque realizado com sucesso"
-        );
+        if (this.saldo >= x) {
+            this.saldo -= x;
+            System.out.println(
+                    "Saque de R$" + x + " realizado com sucesso"
+            );
+        } else{
+            System.out.println(
+                    "Saldo insuficiente"
+            );
+        }
     }
 
     public void mostrarDados(){
