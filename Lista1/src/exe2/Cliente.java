@@ -19,15 +19,16 @@ public class Cliente {
     }
 
     public void realizarDeposito(float x){
-        if (x <= 0){
-            JOptionPane.showMessageDialog(null,
-                    "Operação Inválida!");
-        } else{
-            this.saldo += x;
-        }
+        this.saldo += x;
+        System.out.println(
+                "Depósito realizado com sucesso"
+        );
     }
-    public float realizarSaque(float x){
-        return (this.saldo < x) ? this.saldo -= x : this.saldo;
+    public void realizarSaque(float x){
+        this.saldo -= x;
+        System.out.println(
+                "Saque realizado com sucesso"
+        );
     }
 
     public void mostrarDados(){
