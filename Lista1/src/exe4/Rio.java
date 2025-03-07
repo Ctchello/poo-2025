@@ -35,15 +35,7 @@ public class Rio {
     public void mostra(){
         System.out.println(
                 "Rio " + this.nome +
-                "\nNível " + this.nivel);
-        if (this.poluido){
-            System.out.println(
-                    "Poluído"
-            );
-        }else{
-            System.out.println(
-                    "Limpo"
-            );
-        }
+                "\nNível " + this.nivel +
+                "\n" + (this.poluido ? "Poluído" : "Não Poluído"));
     }
 }
