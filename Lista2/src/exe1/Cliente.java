@@ -6,8 +6,8 @@ public class Cliente {
     private float saldo;
 
     public Cliente(){
-        this.numeroConta = "Indefinido";
-        this.numeroAgencia = "Indefinido";
+        this.setNumeroAgencia("0000-0");
+        this.setNumeroConta("000000-0");
         this.nome = "Indefinido";
     }
 
@@ -32,7 +32,7 @@ public class Cliente {
             this.numeroConta = this.validacao(s, 6);
         }
         else{
-            this.numeroConta = "Inválido";
+            this.numeroConta = "000000-0";
         }
     }
     public void setNumeroAgencia(String s){
@@ -40,7 +40,7 @@ public class Cliente {
             this.numeroAgencia = this.validacao(s, 4);
         }
         else{
-            this.numeroAgencia = "Inválido";
+            this.numeroAgencia = "0000-0";
         }
     }
     public void setNome(String s){
@@ -82,11 +82,21 @@ public class Cliente {
     private String validacao(String s, int i){
         for(int j = 0; j < i; j++){
             if(!Character.isDigit(s.charAt(j))){
-                return "Inválido";
+                if(i == 6){
+                    return "000000-0";
+                }
+                else {
+                    return "0000-0";
+                }
             }
         }
         if(s.charAt(i) != '-' || !Character.isDigit(s.charAt(i+1))){
-            return "Inválido";
+            if(i == 6){
+                return "000000-0";
+            }
+            else {
+                return "0000-0";
+            }
         }
         return s;
     }

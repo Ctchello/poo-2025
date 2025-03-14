@@ -10,7 +10,7 @@ public class Aluno {
 
     public Aluno(){
         this.nome = "Indefinido";
-        this.numeroAlunoString = "0";
+        setNumeroAluno(0);
     }
 
     //getters
@@ -31,7 +31,7 @@ public class Aluno {
     }
     // setters
     public void setNumeroAluno(int i){
-        if (i > 0) {
+        if (i >= 0) {
             String s = String.valueOf(i);
             int j = 6 - s.length();
             if (s.length() <= 6) {
@@ -44,7 +44,7 @@ public class Aluno {
                     this.numeroAlunoString += s;
                 }
             } else {
-                this.numeroAlunoString = "0";
+                setNumeroAluno(0);
             }
         }
     }

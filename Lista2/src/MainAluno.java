@@ -7,5 +7,8 @@ public class MainAluno {
 
         Aluno obj2 = new Aluno(1234567, "João", -2, 2.7f, -3.3f);
         obj2.dadosAluno();
+
+        Aluno obj3 = new Aluno(0, "nomeexageradamentegrandeparanaoinstanciaroatributonomecorretamente", 19, 3, 5);
+        obj3.dadosAluno();
     }
 }
