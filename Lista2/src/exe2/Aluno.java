@@ -5,12 +5,10 @@ import javax.swing.*;
 public class Aluno {
     private int numeroAluno, idade;
     private String nome;
-    private String numeroAlunoString;
     private float p1, p2;
 
     public Aluno(){
         this.nome = "Indefinido";
-        setNumeroAluno(0);
     }
 
     //getters
@@ -34,17 +32,10 @@ public class Aluno {
         if (i >= 0) {
             String s = String.valueOf(i);
             int j = 6 - s.length();
+            // Decidi criar a verificação com valores menores que 6 para que na exibição
+            // ele exiba "0"s na frente do número
             if (s.length() <= 6) {
                 this.numeroAluno = i;
-                if (j > 0) {
-                    this.numeroAlunoString = "";
-                    for (int k = 0; k < j; k++) {
-                        this.numeroAlunoString += "0";
-                    }
-                    this.numeroAlunoString += s;
-                }
-            } else {
-                setNumeroAluno(0);
             }
         }
     }
@@ -76,7 +67,7 @@ public class Aluno {
     }
     public void dadosAluno(){
         JOptionPane.showMessageDialog(null,
-                "Número Aluno: " + this.numeroAlunoString +
+                "Número Aluno: " + numeroAlunoString(this.getNumeroAluno()) +
                 "\nNome: " + this.getNome() +
                 "\nIdade: " + this.getIdade() +
                 "\nP1: " + this.getP1() +
@@ -89,5 +80,16 @@ public class Aluno {
         setIdade(idade);
         setP1(p1);
         setP2(p2);
+    }
+    // Metodo privado de exibição para valores menores ou iguais 6
+    private String numeroAlunoString(int i){
+        String s = "";
+        String s2 = String.valueOf(i);
+        int j = 6 - s2.length();
+        for (int k = 0; k < j; k ++) {
+            s += "0";
+        }
+        s += s2;
+        return s;
     }
 }
