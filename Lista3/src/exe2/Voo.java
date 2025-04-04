@@ -1,22 +1,19 @@
-package exe3;
+package exe2;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public class Voo {
     private int id;
-    private Date data;
-    private String origem;
-    private String destino;
+    private String origem, destino;
+    private LocalDate data;
 
-    public Voo(){
-
+    public Voo() {
     }
-
-    public Voo(int id, Date data, String origem, String destino) {
+    public Voo(int id, String origem, String destino, LocalDate data) {
         this.id = id;
-        this.data = data;
         this.origem = origem;
         this.destino = destino;
+        this.data = data;
     }
 
     public int getId() {
@@ -25,14 +22,6 @@ public class Voo {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public Date getData() {
-        return data;
-    }
-
-    public void setData(Date data) {
-        this.data = data;
     }
 
     public String getOrigem() {
@@ -51,13 +40,21 @@ public class Voo {
         this.destino = destino;
     }
 
+    public LocalDate getData() {
+        return data;
+    }
+
+    public void setData(LocalDate data) {
+        this.data = data;
+    }
+
     @Override
     public String toString() {
         return "Voo{" +
                 "id=" + id +
-                ", data=" + data +
                 ", origem='" + origem + '\'' +
                 ", destino='" + destino + '\'' +
+                ", data=" + data +
                 '}';
     }
 }

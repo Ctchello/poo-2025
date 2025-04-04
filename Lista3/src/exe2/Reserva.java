@@ -1,22 +1,25 @@
-package exe3;
+package exe2;
 
-import java.util.Date;
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
+
 
 public class Reserva {
     private int id;
-    private Date date;
+    private LocalDate data;
     private int validade;
-
+    // associação de agregação
     private Passageiro passageiro;
     private Voo voo;
 
     public Reserva(){
-
+        this.passageiro = new Passageiro();
+        this.voo = new Voo();
     }
-
-    public Reserva(int id, Date date, int validade, Passageiro passageiro, Voo voo) {
+    public Reserva(int id, LocalDate data, int validade, Passageiro passageiro,
+                   Voo voo) {
         this.id = id;
-        this.date = date;
+        this.data = data;
         this.validade = validade;
         this.passageiro = passageiro;
         this.voo = voo;
@@ -30,20 +33,12 @@ public class Reserva {
         this.id = id;
     }
 
-    public Voo getVoo() {
-        return voo;
+    public LocalDate getData() {
+        return data;
     }
 
-    public void setVoo(Voo voo) {
-        this.voo = voo;
-    }
-
-    public Passageiro getPassageiro() {
-        return passageiro;
-    }
-
-    public void setPassageiro(Passageiro passageiro) {
-        this.passageiro = passageiro;
+    public void setData(LocalDate data) {
+        this.data = data;
     }
 
     public int getValidade() {
@@ -54,22 +49,36 @@ public class Reserva {
         this.validade = validade;
     }
 
-    public Date getDate() {
-        return date;
+    public Passageiro getPassageiro() {
+        return passageiro;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
+    public void setPassageiro(Passageiro passageiro) {
+        this.passageiro = passageiro;
+    }
+
+    public Voo getVoo() {
+        return voo;
+    }
+
+    public void setVoo(Voo voo) {
+        this.voo = voo;
+    }
+    private Boolean reservaExpirada(){
+        long diasEntre = ChronoUnit.DAYS.between(this.data, voo.getData());
+        return diasEntre > validade;
     }
 
     @Override
     public String toString() {
         return "Reserva{" +
                 "id=" + id +
-                ", date=" + date +
+                ", data=" + data +
                 ", validade=" + validade +
                 ", passageiro=" + passageiro +
                 ", voo=" + voo +
+                ", reserva=" + (reservaExpirada() ? "expirada" : "válida") +
                 '}';
     }
+
 }

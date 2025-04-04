@@ -1,10 +1,14 @@
 package exe1;
 
-public class Studant {
+public class Student {
     private int id;
     private String name;
 
-    public Studant(String name, int id) {
+    public Student(){
+
+    }
+
+    public Student(String name, int id) {
         this.setName(name);
         this.setId(id);
     }

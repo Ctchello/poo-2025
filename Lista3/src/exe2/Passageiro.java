@@ -1,13 +1,12 @@
-package exe3;
+
+package exe2;
 
 public class Passageiro {
     private int id;
-    private String nome;
-    private String cpf;
+    private String nome, cpf;
 
-    public Passageiro(){
+    public Passageiro() {
     }
-
     public Passageiro(int id, String nome, String cpf) {
         this.id = id;
         this.nome = nome;
